@@ -1,0 +1,5 @@
+name: PlayerHead  
+main: ImagicalGamer\PlayerHead\Main
+version: 1.0.0
+api: [1.0.0, 2.0.0, 3.0.0]
+author: ImagicalGamer
