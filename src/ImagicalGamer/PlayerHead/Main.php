@@ -83,8 +83,6 @@ class Main extends PluginBase implements Listener{
          }
     }
     }
-    else{
-    	$event->setCancelled(true);
-    }
+
   }
 }
