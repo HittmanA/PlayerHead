@@ -33,6 +33,7 @@ use pocketmine\level\format\FullChunk;
 use pocketmine\utils\config;
 
 class Main extends PluginBase implements Listener{
+	public $mode = true;
   public function onEnable(){
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
     $this->getLogger()->info(C::GREEN . "Enabled!");
@@ -53,10 +54,10 @@ class Main extends PluginBase implements Listener{
 			$sender->sendMessage ($this->prefix . "You are not authorized to use this command!" );
 			}
 			else if($args[0] == true){
-				$config->set("active", "true");
+				$this->mode = true;
 			}
 			else if($args[0] == false{
-			$config->set("active", "false");
+			$this->mode = false;
 			}
 			else if($args[0] != false && $args[0] != true){
 				$sender->sendMessage ($this->prefix . "use /head [true/false]!" );
@@ -66,6 +67,7 @@ class Main extends PluginBase implements Listener{
 }
   }
   public function onDeath(PlayerDeathEvent $event){
+  	if($this->mode = true){
     $rand = rand(1, 5);
     switch($rand){
     	case '1':
@@ -105,6 +107,7 @@ class Main extends PluginBase implements Listener{
            $killer->getInventory()->addItem($item);
            $item->setCustomName($name . "'s head");
          }
+    }
     }
     }
 
