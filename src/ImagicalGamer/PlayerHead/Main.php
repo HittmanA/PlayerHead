@@ -62,7 +62,7 @@ class Main extends PluginBase implements Listener{
         break;
     }
     $item = Item::get(397, 3, 1);
-    $e = $event->getEntity();
+    $entity = $event->getEntity();
     $level = $e->getLevel();
     $x = $e->getX();
     $y = $e->getY();
@@ -70,9 +70,9 @@ class Main extends PluginBase implements Listener{
     $sth = $config->getAll();
     $worlds = $sth["Worlds"];
     if($level->getName()!= $worlds){
-    if($e instanceof Player){
+    if($entity instanceof Player){
 	$level->setBlock(new Vector3($x,$y,$z), Block::get(144));
-      $name = $e->getName();
+      $name = $entity->getName();
       $text = C::RED . C::BOLD . $name . "'s head!";
       $particle = new FloatingTextParticle(new Vector3($x, $y, $z), $text);
       $level->addParticle($particle);
