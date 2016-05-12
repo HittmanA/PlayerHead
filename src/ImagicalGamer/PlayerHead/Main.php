@@ -71,7 +71,7 @@ class Main extends PluginBase implements Listener{
     $worlds = $sth["Worlds"];
     if($level->getName()!= $worlds){
     if($entity instanceof Player){
-	$level->setBlock(new Vector3($x,$y,$z), Block::get(144));
+	$level->setBlock(new Vector3($x,$y,$z), Block::get($head));
       $name = $entity->getName();
       $text = C::RED . C::BOLD . $name . "'s head!";
       $particle = new FloatingTextParticle(new Vector3($x, $y, $z), $text);
