@@ -42,14 +42,13 @@ class Main extends PluginBase implements Listener{
     $config = new Config($this->getDataFolder() . "world.yml", Config::YAML);
     $config->save()
   }
-  public function onCommand(){
-  		public function onCommand(CommandSender $sender, Command $command, $label, array $args){
+  public function onCommand(CommandSender $sender, Command $command, $label, array $args){
      if (((strtolower($command->getName () ) == "head" && isset($args [0] )) {
        			if (!$sender instanceof Player) {
 					$sender->sendMessage ("");
 					return;
 			}
-			else if (! $sender->isOp ()) {
+			else if (!$sender->isOp ()) {
 			$sender->sendMessage ($this->prefix . "You are not authorized to use this command!" );
 			}
 			else if($args[0] == true){
