@@ -40,7 +40,7 @@ class Main extends PluginBase implements Listener{
     
     @mkdir($this->getDataFolder());
     $config = new Config($this->getDataFolder() . "world.yml", Config::YAML);
-    $config->save()
+    $config->save();
   }
   public function onCommand(CommandSender $sender, Command $command, $label, array $args){
      if (((strtolower($command->getName () ) == "head" && isset($args [0] )) {
