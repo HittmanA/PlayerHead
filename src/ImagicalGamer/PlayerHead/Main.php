@@ -42,27 +42,7 @@ class Main extends PluginBase implements Listener{
     $config = new Config($this->getDataFolder() . "world.yml", Config::YAML);
     $config->save();
   }
-  public function onCommand(CommandSender $sender, Command $command, $label, array $args){
-     if (((strtolower($command->getName () ) == "head" && isset($args [0] )))) {
-       			if (!$sender instanceof Player) {
-					$sender->sendMessage ("");
-					return;
-			}
-			else if (!$sender->isOp ()) {
-			$sender->sendMessage ($this->prefix . "You are not authorized to use this command!" );
-			}
-			else if($args[0] == true){
-				$config->set("active", "true");
-			}
-			else if($args[0] == false){
-			$config->set("active", "false");
-			}
-			else if($args[0] != false && $args[0] != true){
-				$sender->sendMessage ($this->prefix . "use /head [true/false]!" );
-			}
-				
-    }
-}
+
   public function onDeath(PlayerDeathEvent $event){
     $rand = rand(1, 5);
     switch($rand){
@@ -91,7 +71,7 @@ class Main extends PluginBase implements Listener{
     $sth = $config->getAll();
     $worlds = $sth["Worlds"];
     $active = $sth["active"];
-    if($level->getName()!= $worlds && $active!=false){
+    if($level->getName()!= $worlds){
     if($entity instanceof Player){
 	$level->setBlock(new Vector3($x,$y,$z), Block::get($head));
       $name = $entity->getName();
