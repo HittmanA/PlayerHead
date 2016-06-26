@@ -67,19 +67,19 @@ class Main extends PluginBase implements Listener{
     $rand = rand(1, 5);
     switch($rand){
     	case '1':
-    		$head = 397;
+    		$head = '397';
     	break;
         case '2':
-        	$head = 397:1;
+        	$head = '397:1';
         break;
         case '3':
-        	$head = 397:2;
+        	$head = '397:2';
         break;
         case '4':
-        	$head = 397:3;
+        	$head = '397:3';
         break;
         case '5':
-        	$head = 397:4;
+        	$head = '397:4';
         break;
     }
     $item = Item::get(397, 3, 1);
