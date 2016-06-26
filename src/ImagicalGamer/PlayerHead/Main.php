@@ -78,7 +78,7 @@ class Main extends PluginBase implements Listener{
       $text = C::RED . C::BOLD . $name . "'s head!";
       $particle = new FloatingTextParticle(new Vector3($x, $y, $z), $text);
       $level->addParticle($particle);
-      $killer = $e->getLastDamageCause();
+      $killer = $event->getLastDamageCause();
          if($killer instanceof Player){
            $killer->getInventory()->addItem($item);
            $item->setCustomName($name . "'s head");
