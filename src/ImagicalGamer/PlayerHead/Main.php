@@ -63,7 +63,6 @@ class Main extends PluginBase implements Listener{
 				
     }
 }
-  }
   public function onDeath(PlayerDeathEvent $event){
     $rand = rand(1, 5);
     switch($rand){
