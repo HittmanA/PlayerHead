@@ -54,7 +54,7 @@ class Main extends PluginBase implements Listener{
 			else if($args[0] == true){
 				$config->set("active", "true");
 			}
-			else if($args[0] == false{
+			else if($args[0] == false){
 			$config->set("active", "false");
 			}
 			else if($args[0] != false && $args[0] != true){
