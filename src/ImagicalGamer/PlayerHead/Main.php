@@ -64,10 +64,10 @@ class Main extends PluginBase implements Listener{
     }
     $item = Item::get(397, 3, 1);
     $entity = $event->getEntity();
-    $level = $e->getLevel();
-    $x = $e->getX();
-    $y = $e->getY();
-    $z = $e->getZ();
+    $level = $entity->getLevel();
+    $x = $entity->getX();
+    $y = $entity->getY();
+    $z = $entity->getZ();
     $sth = $config->getAll();
     $worlds = $sth["Worlds"];
     $active = $sth["active"];
