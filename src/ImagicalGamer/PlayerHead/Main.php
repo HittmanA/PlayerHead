@@ -43,7 +43,7 @@ class Main extends PluginBase implements Listener{
     $config->save();
   }
   public function onCommand(CommandSender $sender, Command $command, $label, array $args){
-     if (((strtolower($command->getName () ) == "head" && isset($args [0] )) {
+     if (((strtolower($command->getName () ) == "head" && isset($args [0] )))) {
        			if (!$sender instanceof Player) {
 					$sender->sendMessage ("");
 					return;
