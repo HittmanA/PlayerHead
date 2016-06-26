@@ -68,7 +68,7 @@ class Main extends PluginBase implements Listener{
     $x = $entity->getX();
     $y = $entity->getY();
     $z = $entity->getZ();
-    $sth = $config->getAll();
+    #$sth = $config->getAll();
     #$worlds = $sth["Worlds"];
     #$active = $sth["active"];
     #if($level->getName()!= $worlds){
