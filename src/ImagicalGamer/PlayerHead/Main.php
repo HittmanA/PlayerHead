@@ -69,9 +69,9 @@ class Main extends PluginBase implements Listener{
     $y = $entity->getY();
     $z = $entity->getZ();
     $sth = $config->getAll();
-    $worlds = $sth["Worlds"];
-    $active = $sth["active"];
-    if($level->getName()!= $worlds){
+    #$worlds = $sth["Worlds"];
+    #$active = $sth["active"];
+    #if($level->getName()!= $worlds){
     if($entity instanceof Player){
 	$level->setBlock(new Vector3($x,$y,$z), Block::get($head));
       $name = $entity->getName();
@@ -84,7 +84,7 @@ class Main extends PluginBase implements Listener{
            $item->setCustomName($name . "'s head");
          }
     }
-    }
+    #}
 
   }
 }
